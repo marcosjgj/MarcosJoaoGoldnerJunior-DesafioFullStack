@@ -15,9 +15,9 @@ function App() {
             case 'home':
                 return (
                     <div className="header">
-                        <h2>Bem-vindo ao Oxyn Notas</h2>
+                        <h2>Bem-vindo!</h2>
                         <p style={{ marginTop: '20px', color: '#666' }}>
-                            Selecione "Notas" no menu lateral para gerenciar os registros dos equipamentos.
+                            Página Home em construção.
                         </p>
                     </div>
                 );
@@ -26,7 +26,7 @@ function App() {
                     <div className="header">
                         <h2>Análises</h2>
                         <p style={{ marginTop: '20px', color: '#666' }}>
-                            Página de Análises em construção.
+                            Página Análises em construção.
                         </p>
                     </div>
                 );
@@ -35,7 +35,7 @@ function App() {
                     <div className="header">
                         <h2>Histórico</h2>
                         <p style={{ marginTop: '20px', color: '#666' }}>
-                            Página de Histórico em construção.
+                            Página Histórico em construção.
                         </p>
                     </div>
                 );
@@ -44,7 +44,7 @@ function App() {
                     <div className="header">
                         <h2>Mapa</h2>
                         <p style={{ marginTop: '20px', color: '#666' }}>
-                            Página de Mapa em construção.
+                            Página Mapa em construção.
                         </p>
                     </div>
                 );
@@ -53,7 +53,7 @@ function App() {
                     <div className="header">
                         <h2>Dashboard</h2>
                         <p style={{ marginTop: '20px', color: '#666' }}>
-                            Página de Dashboard em construção.
+                            Página Dashboard em construção.
                         </p>
                     </div>
                 );

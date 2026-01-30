@@ -150,7 +150,6 @@ html {
 }
 
 .input-field {
-    width: 100%;
     padding: 12px 16px;
     background-color: #FFFFFF;
     border: 1px solid #DEE2E6;
@@ -164,22 +163,22 @@ html {
     line-height: 150%;
 }
 
-/* Foco Azul Ciano (Conforme guia 'Inputs Base') */
-.input-field:focus {
-    border-color: var(--primary-focus);
-    box-shadow: 0 0 0 1px var(--primary-focus);
-}
-
-/* Estado de Erro */
+/* Estado de erro do input */
 .input-field.error {
-    border-color: var(--danger);
+    border-color: var(--danger) !important;
+    background-color: #FFF5F5;
+    /* Um leve fundo avermelhado para destaque */
 }
 
+/* Mensagem de erro abaixo do input */
 .error-message {
     color: var(--danger);
     font-size: 12px;
-    margin-top: 4px;
-    font-weight: 400;
+    margin-top: 5px;
+    font-weight: 600;
+    font-family: 'Sora', sans-serif;
+    display: block;
+    /* Garante que fique embaixo */
 }
 
 /* Botão de Limpar (X) dentro do input */
@@ -388,7 +387,7 @@ html {
 }
 
 .close-btn {
-    font-size: 28px;
+    font-size: 16px;
     line-height: 1;
     /* Garante que o X não empurre o layout */
     background: none;
@@ -397,6 +396,7 @@ html {
     color: var(--gray-500);
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .close-btn:hover {
@@ -456,4 +456,44 @@ html {
     cursor: pointer;
     font-weight: 600;
     margin-top: 5px;
+}
+
+.periodo-selecionado {
+    font-size: 16px;
+    color: #6C757D;
+    margin-top: 10px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    text-align: right;
+    line-height: 20px;
+}
+
+.filtro-periodo-container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Botão de Limpar dentro do Calendário */
+.btn-limpar-data {
+    background-color: var(--gray-200);
+    /* Cor neutra para limpeza */
+    color: var(--gray-600);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Sora', sans-serif;
+    margin-top: 5px;
+    transition: all 0.2s;
+}
+
+.btn-limpar-data:hover {
+    background-color: var(--danger);
+    /* Fica vermelho ao passar o mouse */
+    color: white;
 }
