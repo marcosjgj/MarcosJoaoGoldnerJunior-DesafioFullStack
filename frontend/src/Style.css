@@ -1,5 +1,5 @@
 /* IMPORTAÇÃO DO DESIGN SYSTEM (FONTE SORA) */
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap'); */
 
 /* RESET GERAL */
 * {
@@ -66,7 +66,7 @@ html {
 }
 
 .logo img {
-    width: 100px;
+    width: 80px;
 }
 
 .menuprincipal {
@@ -192,7 +192,7 @@ html {
     border: none;
     color: var(--gray-500);
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
     align-items: center;
 }
@@ -228,6 +228,7 @@ html {
 
 .clickable-row:hover {
     background-color: #f8f9fa;
+    cursor: pointer;
 }
 
 /* MODAL */
@@ -284,7 +285,9 @@ html {
 }
 
 .btn-success,
-.modal-btn-salvar {
+.modal-btn-salvar,
+.btn-periodo,
+.btn-nova-nota {
     background-color: var(--success);
     color: white;
     border: none;
@@ -293,7 +296,7 @@ html {
     cursor: pointer;
     font-family: 'Sora', sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     transition: background 0.2s;
 }
 
@@ -301,8 +304,14 @@ html {
     flex: 2;
 }
 
+.btn-nova-nota {
+    margin-right: auto;
+}
+
 .btn-success:hover,
-.modal-btn-salvar:hover {
+.modal-btn-salvar:hover,
+.btn-periodo:hover,
+.btn-nova-nota:hover {
     background-color: var(--success-hover);
 }
 
@@ -315,7 +324,7 @@ html {
     cursor: pointer;
     font-family: 'Sora', sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     flex: 2;
 }
 
@@ -391,4 +400,59 @@ html {
 
 .close-btn:hover {
     color: var(--dark);
+}
+
+/* Container do filtro de data (Gatilho) */
+.filtro-periodo-container {
+    position: relative;
+    display: flex;
+}
+
+/* Botão que abre o calendário */
+.btn-periodo {
+    margin-left: auto;
+    width: 250px;
+}
+
+/* A Janela Flutuante (O Dropdown) */
+.dropdown-data {
+    position: absolute;
+    top: calc(100% + 10px);
+    /* Aparece 10px abaixo do botão */
+    right: 10;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* Sombra para profundidade */
+    border: 1px solid var(--gray-200);
+    z-index: 1000;
+    /* Garante que fique acima da tabela */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 250px;
+}
+
+.data-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.data-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-500);
+}
+
+.btn-aplicar-data {
+    background-color: var(--success);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 5px;
 }

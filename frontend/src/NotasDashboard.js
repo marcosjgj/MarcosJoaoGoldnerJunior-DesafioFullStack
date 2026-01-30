@@ -4,6 +4,7 @@ import chevronDir from './imgs/chevron-dir.svg';
 import doubleArrowDir from './imgs/double-arrow-dir.svg';
 import chevronEsq from './imgs/chevron-esq.svg';
 import doubleArrowEsq from './imgs/double-arrow-esq.svg';
+import filter from './imgs/filter.svg';
 
 function NotasDashboard() {
   const [notes, setNotes] = useState([]);
@@ -11,11 +12,10 @@ function NotasDashboard() {
   const [totalRecords, setTotalRecords] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [filters, setFilters] = useState({ site: '', equipment: '', startDate: '', endDate: '' });
-
   const emptyNote = { site: '', equipment: '', variable: '', author: '', message: '' };
   const [newNote, setNewNote] = useState(emptyNote);
-
   const limit = 5;
+  const [showDatePicker, setShowDatePicker] = useState(false);
 
   const fetchNotes = useCallback(async () => {
     try {
@@ -85,15 +85,59 @@ function NotasDashboard() {
       </header>
 
       <section className="filter-bar">
+
         <div className="filter-group">
           <input className="input-field" style={{ width: '230px' }} placeholder="Filtrar por Site" value={filters.site} onChange={e => { setFilters({ ...filters, site: e.target.value }); setPage(1); }} />
           <input className="input-field" style={{ width: '230px' }} placeholder="Filtrar por Equipamento" value={filters.equipment} onChange={e => { setFilters({ ...filters, equipment: e.target.value }); setPage(1); }} />
+          {/*
           <input className="input-field" style={{ width: '230px' }} type="date" value={filters.startDate} onChange={e => { setFilters({ ...filters, startDate: e.target.value }); setPage(1); }} />
           <input className="input-field" style={{ width: '230px' }} type="date" value={filters.endDate} onChange={e => { setFilters({ ...filters, endDate: e.target.value }); setPage(1); }} />
+          */}
         </div>
-        <button className="btn-success" onClick={() => { setNewNote(emptyNote); setIsModalOpen(true); }}>
-          + Nova Nota
-        </button>
+
+        <div className="filtro-periodo-container">
+          <button
+            className="btn-periodo"
+            onClick={() => setShowDatePicker(!showDatePicker)}
+          >
+            <img src={filter} alt="Filtro" style={{ marginRight: '15px', height: '16px' }} />
+            {filters.startDate && filters.endDate
+              ? `${filters.startDate} até ${filters.endDate}`
+              : 'Filtrar por período'}
+          </button>
+
+          {/* O Dropdown flutuante */}
+          {showDatePicker && (
+            <div className="dropdown-data">
+              <div className="data-group">
+                <label>Data Inicial</label>
+                <input
+                  type="date"
+                  className="input-field"
+                  value={filters.startDate}
+                  onChange={(e) => setFilters({ ...filters, startDate: e.target.value })}
+                />
+              </div>
+
+              <div className="data-group">
+                <label>Data Final</label>
+                <input
+                  type="date"
+                  className="input-field"
+                  value={filters.endDate}
+                  onChange={(e) => setFilters({ ...filters, endDate: e.target.value })}
+                />
+              </div>
+
+              <button
+                className="btn-aplicar-data"
+                onClick={() => setShowDatePicker(false)}
+              >
+                Aplicar Filtro
+              </button>
+            </div>
+          )}
+        </div>
       </section>
 
       {isModalOpen && (
@@ -149,6 +193,10 @@ function NotasDashboard() {
       </div>
 
       <div className="pagination">
+
+        <button className="btn-nova-nota" onClick={() => { setNewNote(emptyNote); setIsModalOpen(true); }}>
+          + Nova Nota
+        </button>
         <button className="page-btn nav-btn" disabled={page === 1} onClick={() => setPage(1)}><img src={doubleArrowEsq} style={{ height: '13px' }} alt="Seta para o primeiro" /></button>
         <button className="page-btn nav-btn" disabled={page === 1} onClick={() => setPage(page - 1)}><img src={chevronEsq} style={{ height: '13px' }} alt="Seta para a esquerda" /></button>
 
