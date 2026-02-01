@@ -6,7 +6,7 @@ import uuid
 import os
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(title="Desafio Oxyn API")
+app = FastAPI(title="Desafio API")
 DB_PATH = "database.db"
 CSV_PATH = "../materials/notes.csv"
 
