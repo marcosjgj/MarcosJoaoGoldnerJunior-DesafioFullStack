@@ -22,20 +22,27 @@ Este projeto é uma solução Full Stack desenvolvida para o gerenciamento de no
 
 ### 1. Preparando o Backend (Python)
 
+    O servidor foi desenvolvido com FastAPI e utiliza SQLite para persistência, dispensando configurações complexas de banco de dados.
+
     Recomenda-se o uso de um ambiente virtual (venv).
 
-    1. Abra o terminal na raiz do projeto e acesse a pasta do backend:
+    1. Abra o terminal na raiz do projeto e acesse a pasta do /backend:
         cd backend
-    2. Instale as dependências:
+    2. Crie um ambiente virtual para isolar as dependências:
+        python -m venv venv
+    3. Ative o ambiente virtual:
+        Windows: .\venv\Scripts\activate
+        Mac/Linux: source venv/bin/activate
+    4. Instale as dependências:
         pip install -r requirements.txt
-    3. Inicie o servidor:
-        uvicorn main:app --reload
+    5. Inicie o servidor:
+        python -m uvicorn main:app --reload
     
     O servidor estará disponível em http://127.0.0.1:8000.
 
 ### 2. Preparando o Frontend (React)
 
-    1. Abra um novo terminal na raiz do projeto e acesse a pasta do frontend:
+    1. Abra um novo terminal na raiz do projeto e acesse a pasta do /frontend:
         cd frontend
     2. Instale as dependências:
         npm install
