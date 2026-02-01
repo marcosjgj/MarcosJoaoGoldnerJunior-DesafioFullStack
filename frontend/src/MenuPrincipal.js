@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Style.css'; // Importe corrigido para letras minúsculas
 import logo from './imgs/logo.svg';
 import home from './imgs/home.svg';
