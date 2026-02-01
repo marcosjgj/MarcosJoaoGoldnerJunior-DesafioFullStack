@@ -51,7 +51,7 @@ Este projeto é uma solução Full Stack desenvolvida para o gerenciamento de no
     
     A aplicação abrirá em http://localhost:3000.
 
-### Dica: Atalho para Iniciar o Projeto
+### Dica: Atalho para Iniciar o Projeto após todas as dependencias estiverem instaladas
 
     Para facilitar a execução, você pode criar um arquivo chamado iniciar_projeto.bat na raiz do projeto com o seguinte conteúdo:
 
