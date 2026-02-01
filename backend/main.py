@@ -63,11 +63,11 @@ def get_notes(
     params = []
 
     if site:
-        base_query += " AND site = ?"
-        params.append(site)
+        base_query += " AND site like ?"
+        params.append(f"{site}%")
     if equipment:
-        base_query += " AND equipment = ?"
-        params.append(equipment)
+        base_query += " AND equipment like ?"
+        params.append(f"{equipment}%")
     if startDate and endDate:
         base_query += " AND timestamp BETWEEN ? AND ?"
         params.append(startDate)
